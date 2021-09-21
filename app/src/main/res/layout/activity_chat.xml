@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ChatActivity">
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="90dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_height="90dp"
+            android:src="@drawable/profile"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#7e45f5"/>
+
+        <TextView
+            android:id="@+id/ReceiverName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="@dimen/_10sdp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/message_Adapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll3"
+        android:layout_below="@+id/ll1">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_2sdp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/message_shape"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+
+            android:layout_margin="@dimen/_3sdp"
+
+            android:layout_height="@dimen/_35sdp">
+
+            <EditText
+                android:id="@+id/edtMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:hint="Type your Message..."
+                android:layout_gravity="center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:background="@null"
+                android:fontFamily="monospace"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sendBtn"
+            android:layout_width="@dimen/_35sdp"
+           android:background="@drawable/sendlayout"
+            android:layout_margin="@dimen/_3sdp"
+            android:gravity="center"
+            android:layout_height="@dimen/_35sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+
+                android:layout_gravity="center"
+                android:background="@drawable/sent3"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
